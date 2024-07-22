@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black;">
+    <div class="container" style="padding-top: 60px;">
+        
+         <div class="row">
+            <div class="col-4">
+
+            </div>
+            <div class="col-4" style="background-color:lavenderblush;">
+                <div class="mb-4 mt-4">
+
+              <label class="form-label" style="font-weight: bold; color: darkblue;">
+                
+                Email
+              </label>
+              
+              <input type="email" class="form-control" id="email">
+              <span id="errEmail" style="color: red;">
+
+              </span>
+            </div>
+
+            <div class="mb-4 mt-4" style="background-color: lavenderblush;">
+
+                <label class="form-label" style="font-weight: bold; color: darkblue;">
+                  
+                  Password
+                </label>
+                
+                <input type="password" class="form-control" id="password">
+                <span id="errp" style="color: red;">
+
+                </span>
+              </div>
+              <div class="mb-4">
+          
+                <button class="btn btn-danger" onclick="validateForm()" style="width: 100%;">SIGN UP</button>
+
+                
+              </div>
+
+            </div>
+
+
+
+            <div class="col-4">
+                
+            </div>
+           
+         </div>
+
+    </div>
+
+
+    <script>
+        function validateForm()
+        {
+            var email=document.getElementById('email').value;
+            var regEx=/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+            var regex=/^(?=.[a-z])(?=.[A-Z])(?=.*\d)[a-zA-Z\d]{4,}$/;                                                 ;
+            if(email)
+            {
+                                if(regEx.test(email))
+                {
+                    document.getElementById('errEmail').innerHTML=""
+                }
+                else
+                {
+                    document.getElementById('errEmail').innerHTML="Enter valid email!"
+                    return true
+                }
+            }
+            else
+                {
+                    document.getElementById('errEmail').innerHTML=" Please Enter email!"
+                    return true
+                }
+                if(password)
+            {
+                                if(regex.test(password))
+                {
+                    document.getElementById('errp').innerHTML=""
+                }
+                else
+                {
+                    document.getElementById('errp').innerHTML="Enter valid password!"
+                    return true
+                }
+            }
+            else
+                {
+                    document.getElementById('errp').innerHTML=" Please enter password!"
+                    return true
+                }
+
+              
+        }
+      
+
+    </script>
+
+</body>
+</html>
